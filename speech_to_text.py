@@ -5,7 +5,6 @@ def record_text():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source, duration=0.2)
-        print("Hello, I am Baymax, your personal healthcare companion. How can I help you?")
         audio = r.listen(source)
 
     # Convert audio to text
