@@ -4,7 +4,7 @@ client = OpenAI()
 
 # Function for sending a request to the OpenAI API and returns the ChatGPT output
 # Models: gpt-4o-2024-05-13 or gpt-3.5-turbo
-def openAI_api_request(messages, model="gpt-3.5-turbo"): # October 2023 knowledge cutoff
+def openAI_api_request(messages, model="gpt-4o-2024-05-13"): # October 2023 knowledge cutoff for gpt-4o
 
     response = client.chat.completions.create(
         model=model,

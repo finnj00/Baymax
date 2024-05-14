@@ -12,7 +12,7 @@ def speak_text_elevenlabs(command):
         audio.export(wav_file_path, format='wav')
 
     CHUNK_SIZE = 1024
-    url = "https://api.elevenlabs.io/v1/text-to-speech/21m00Tcm4TlvDq8ikWAM"
+    url = "https://api.elevenlabs.io/v1/text-to-speech/SRloleSgPd7HVQNqtHHB"
 
     # Load environment variables from .env file
     load_dotenv()
