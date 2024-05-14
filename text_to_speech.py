@@ -1,6 +1,8 @@
 import requests
 import simpleaudio as sa
 from pydub import AudioSegment
+from dotenv import load_dotenv
+import os
 
 # Function for converting text to speech using the ElevenLabs API
 def speak_text_elevenlabs(command):
@@ -12,10 +14,16 @@ def speak_text_elevenlabs(command):
     CHUNK_SIZE = 1024
     url = "https://api.elevenlabs.io/v1/text-to-speech/21m00Tcm4TlvDq8ikWAM"
 
+    # Load environment variables from .env file
+    load_dotenv()
+
+    # Access the API key
+    api_key = os.getenv("ELEVENLABS_API_KEY")
+
     headers = {
     "Accept": "audio/mpeg",
     "Content-Type": "application/json",
-    "xi-api-key": "test"
+    "xi-api-key": api_key
     }
 
     data = {
