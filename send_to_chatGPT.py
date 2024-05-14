@@ -8,7 +8,7 @@ def openAI_api_request(messages, model="gpt-3.5-turbo"):
     response = client.chat.completions.create(
         model=model,
         messages=messages,
-        max_tokens=50, # upper bound on max length of ChatGPT's response
+        max_tokens=75, # upper bound on max length of ChatGPT's response
         n=1,
         stop=None,
         temperature=0.5
@@ -17,6 +17,5 @@ def openAI_api_request(messages, model="gpt-3.5-turbo"):
     message = response.choices[0].message.content
     messages.append(response.choices[0].message)
     
-    # temp
     print(message)
     return message

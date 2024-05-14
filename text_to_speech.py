@@ -1,16 +1,8 @@
-import pyttsx3
 import requests
 import simpleaudio as sa
 from pydub import AudioSegment
 
-# Function for converting text to speech
-def speak_text(command):
-    engine = pyttsx3.init()
-    # baymax_voice_path = "/Users/finnj00/VSCodeProjects/Python Projects/Baymax/baymax-impression.wav"
-    # engine.setProperty('voice', baymax_voice_path)
-    engine.say(command)
-    engine.runAndWait()
-
+# Function for converting text to speech using the ElevenLabs API
 def speak_text_elevenlabs(command):
 
     def convert_mp3_to_wav(mp3_file_path, wav_file_path):
@@ -40,9 +32,8 @@ def speak_text_elevenlabs(command):
         # Save the audio content to a file
         with open('output.mp3', 'wb') as audio_file:
             audio_file.write(response.content)
-        print('Audio content written to file "output.mp3"')
 
-        # Play the audio using simpleaudio or any other library
+        # Play the audio using simpleaudio
         convert_mp3_to_wav("output.mp3", "output.wav")
         wave_obj = sa.WaveObject.from_wave_file("output.wav")
         play_obj = wave_obj.play()
