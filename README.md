@@ -14,8 +14,8 @@ Baymax Virtual Assistant is an AI-powered virtual assistant that emulates Baymax
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/baymax-virtual-assistant.git
-    cd baymax-virtual-assistant
+    git clone https://github.com/finnj00/Baymax.git
+    cd Baymax
     ```
 
 2. **Create and Activate a Virtual Environment** (optional but recommended):
